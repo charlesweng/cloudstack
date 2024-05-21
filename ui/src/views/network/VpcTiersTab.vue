@@ -591,6 +591,26 @@ export default {
         if (this.isNsxEnabled) {
           this.networkOfferings = this.networkOfferings.filter(offering => offering.nsxmode === (this.isOfferingNatMode ? 'NATTED' : 'ROUTED'))
         }
+        /* loop through the vpcs */
+        for (var vpcIndex in this.networkOfferings) {
+          /* get the current vpc */
+          const offering = this.networkOffering[vpcIndex]
+          /* check if load balancer field inside vpc offering exists */
+          const idx = offering.service.map(svc => { return svc.name }).indexOf('Lb')
+          /* make sure Lb was found by assigning idx !== -1 */
+          if (idx !== -1) {
+            /* if load balancer has VpcVirtualRouter (public) and not InternalLbVm (private) */
+            if (offering.service[idx].map(balancerType => balancerType.name).includes('VpcVirtualRouter') &&
+                  !offering.service[idx].map(balancerType => balancerType.name).includes('InternalLbVm')) {
+              this.networkOffering = this.networkOffering.filter(offering => !offering.includes('Internal'))
+            }
+            /* if load balancer has internalLbVm (private) and not VpcVirtualRouter (public) */
+            if (!offering.service[idx].map(balancerType => balancerType.name).includes('InternalLbVm') &&
+                  offering.service[idx].map(balancerType => balancerType.name).includes('VpcVirtualRouter')) {
+              this.networkOffering = this.networkOffering.filter(offering => !offering.includes('Public'))
+            }
+          }
+        }
         this.form.networkOffering = this.networkOfferings[0].id
       }).catch(error => {
         this.$notifyError(error)
