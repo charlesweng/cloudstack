@@ -1201,6 +1201,28 @@ describe('Views > AutogenView.vue', () => {
         ])
         done()
       })
+
+      it('check currentAction paramFields when execAction() is called args has no confirmpassword field', async (done) => {
+        originalFunc.getFirstIndexFocus = wrapper.vm.getFirstIndexFocus
+        originalFunc.setRules = wrapper.vm.setRules
+        originalFunc.listUuidOpts = wrapper.vm.listUuidOpts
+        originalFunc.fillEditFormFieldValues = wrapper.vm.fillEditFormFieldValues
+
+        wrapper.vm.getFirstIndexFocus = jest.fn()
+        wrapper.vm.setRules = jest.fn((param) => {})
+        wrapper.vm.listUuidOpts = jest.fn((param) => {})
+        wrapper.vm.fillEditFormFieldValues = jest.fn()
+
+        await wrapper.vm.execAction({
+          api: 'testApiNameCase6',
+          args: [],
+          mapping: {}
+        })
+        await flushPromises()
+
+        expect(wrapper.vm.currentAction.paramFields).toEqual([])
+        done()
+      })
     })
 
     describe('listUuidOpts()', () => {
