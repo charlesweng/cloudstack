@@ -878,7 +878,7 @@ export default {
           docHelp: 'adminguide/networking_and_traffic.html#adding-a-private-gateway-to-a-vpc',
           listView: true,
           args: (record, store) => {
-            var fields = ['vpcid', 'physicalnetworkid', 'vlan', 'ipaddress', 'gateway', 'netmask', 'sourcenatsupported', 'aclid']
+            var fields = ['vpcid', 'physicalnetworkid', 'vlan', 'ipaddress', 'gateway', 'netmask', 'description', 'sourcenatsupported', 'aclid']
             if (store.apis.createPrivateGateway.params.filter(x => x.name === 'bypassvlanoverlapcheck').length > 0) {
               fields.push('bypassvlanoverlapcheck')
             }

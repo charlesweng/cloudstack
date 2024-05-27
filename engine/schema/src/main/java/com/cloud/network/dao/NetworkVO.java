@@ -182,6 +182,9 @@ public class NetworkVO implements Network {
     @Column(name = "external_id")
     String externalId;
 
+    @Column(name = "description")
+    String description;
+
     @Transient
     String routerIp;
 
