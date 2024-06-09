@@ -91,6 +91,13 @@ public class CreateNetworkCmdTest {
     }
 
     @Test
+    public void testGetDescription() {
+        String description = "admin private network gateway";
+        ReflectionTestUtils.setField(cmd, "description", description);
+        Assert.assertEquals(cmd.getDescription(), description);
+    }
+
+    @Test
     public void testGetStartIp() {
         String startIp = "10.10.10.2";
         ReflectionTestUtils.setField(cmd, "startIp", startIp);

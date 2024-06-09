@@ -87,6 +87,9 @@ public class CreateNetworkCmd extends BaseCmd implements UserCmd {
         + "for shared networks and isolated networks when it belongs to VPC")
     private String netmask;
 
+    @Parameter(name = ApiConstants.DESCRIPTION, type = CommandType.STRING, description = "the description of network")
+    private String description;
+
     @Parameter(name = ApiConstants.START_IP, type = CommandType.STRING, description = "the beginning IP address in the network IP range")
     private String startIp;
 
@@ -216,6 +219,10 @@ public class CreateNetworkCmd extends BaseCmd implements UserCmd {
 
     public String getNetmask() {
         return netmask;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public String getStartIp() {

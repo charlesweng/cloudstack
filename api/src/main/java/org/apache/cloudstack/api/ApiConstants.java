@@ -553,6 +553,7 @@ public class ApiConstants {
     public static final String LINK_LOCAL_MAC_ADDRESS = "linklocalmacaddress";
     public static final String LINK_LOCAL_MAC_NETMASK = "linklocalnetmask";
     public static final String LINK_LOCAL_NETWORK_ID = "linklocalnetworkid";
+    public static final String PRIVATE_DESCRIPTION = "privatedescription";
     public static final String PRIVATE_MAC_ADDRESS = "privatemacaddress";
     public static final String PRIVATE_NETMASK = "privatenetmask";
     public static final String PRIVATE_NETWORK_ID = "privatenetworkid";

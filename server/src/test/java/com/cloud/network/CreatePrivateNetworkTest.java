@@ -188,4 +188,27 @@ public class CreatePrivateNetworkTest {
         }
     }
 
+    @Test
+    @DB
+    public void createPrivateNetworkWithDescription() {
+        TransactionLegacy __txn;
+        __txn = TransactionLegacy.open("createInvalidlyHostedPrivateNetworkTest");
+        try {
+            String expected = "bla vlan:1";
+            Network network = networkService.createPrivateNetwork("bla", "fake", 1L, "vlan:1", "10.1.1.2", null, "10.1.1.1", "255.255.255.0", "bla vlan:1", 1L, 1L, true, 1L, false, null);
+
+        } catch (ResourceAllocationException e) {
+            logger.error("no resources", e);
+            fail("no resources");
+        } catch (ConcurrentOperationException e) {
+            logger.error("another one is in the way", e);
+            fail("another one is in the way");
+        } catch (InsufficientCapacityException e) {
+            logger.error("no capacity", e);
+            fail("no capacity");
+        } finally {
+            __txn.close("createInvalidlyHostedPrivateNetworkTest");
+        }
+    }
+
 }

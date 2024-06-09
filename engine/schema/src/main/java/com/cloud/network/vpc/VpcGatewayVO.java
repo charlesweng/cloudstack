@@ -48,6 +48,9 @@ public class VpcGatewayVO implements VpcGateway {
     @Column(name = "netmask")
     String netmask;
 
+    @Column(name = "description")
+    String description;
+
     @Column(name = "vlan_tag")
     String broadcastUri;
 
@@ -228,5 +231,10 @@ public class VpcGatewayVO implements VpcGateway {
 
     public void setVpcId(Long vpcId) {
         this.vpcId = vpcId;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }
