@@ -3476,6 +3476,7 @@ public class ApiResponseHelper implements ResponseGenerator {
         populateDomain(response, result.getDomainId());
         response.setState(result.getState().toString());
         response.setSourceNat(result.getSourceNat());
+        logger.info("vpc gateway private gateway response: " + result.getDescription());
         response.setDescription(result.getDescription());
 
         NetworkACL acl =  ApiDBUtils.findByNetworkACLId(result.getNetworkACLId());

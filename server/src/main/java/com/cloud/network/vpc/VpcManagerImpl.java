@@ -2654,6 +2654,7 @@ public class VpcManagerImpl extends ManagerBase implements VpcManager, VpcProvis
         final List<PrivateGateway> privateGtws = new ArrayList<PrivateGateway>(vos.first().size());
         for (final VpcGateway vo : vos.first()) {
             privateGtws.add(getPrivateGatewayProfile(vo));
+            logger.info("vpc gateway list: " + vo.getDescription());
         }
 
         return new Pair<List<PrivateGateway>, Integer>(privateGtws, vos.second());
