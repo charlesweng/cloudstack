@@ -127,7 +127,7 @@ public class VpcGatewayVO implements VpcGateway {
         state = State.Creating;
         this.sourceNat = sourceNat;
         this.networkACLId = networkACLId;
-
+        this.description = description;
     }
 
     @Override
