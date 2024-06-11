@@ -2236,6 +2236,8 @@ public class VpcManagerImpl extends ManagerBase implements VpcManager, VpcProvis
         Long aclId = command.getAclId();
         Long associatedNetworkId = command.getAssociatedNetworkId();
 
+        logger.info("Description vpc gateway" + description);
+
         if (command instanceof CreatePrivateGatewayByAdminCmd) {
             Long physicalNetworkId = ((CreatePrivateGatewayByAdminCmd)command).getPhysicalNetworkId();
             String broadcastUri = ((CreatePrivateGatewayByAdminCmd)command).getBroadcastUri();
