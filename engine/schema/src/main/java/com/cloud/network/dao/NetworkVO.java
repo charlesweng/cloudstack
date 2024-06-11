@@ -707,6 +707,14 @@ public class NetworkVO implements Network {
         this.externalId = externalId;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getVlanIdAsUUID() {
         return vlanIdAsUUID;
     }
