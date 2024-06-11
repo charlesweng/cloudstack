@@ -861,8 +861,8 @@ export default {
       icon: 'gateway-outlined',
       hidden: true,
       permission: ['listPrivateGateways'],
-      columns: ['ipaddress', 'state', 'gateway', 'netmask', 'account', 'domain'],
-      details: ['ipaddress', 'gateway', 'netmask', 'vlan', 'sourcenatsupported', 'aclname', 'account', 'domain', 'zone', 'associatednetwork', 'associatednetworkid'],
+      columns: ['ipaddress', 'state', 'gateway', 'netmask', 'description', 'account', 'domain'],
+      details: ['ipaddress', 'gateway', 'netmask', 'description', 'vlan', 'sourcenatsupported', 'aclname', 'account', 'domain', 'zone', 'associatednetwork', 'associatednetworkid'],
       tabs: [{
         name: 'details',
         component: shallowRef(defineAsyncComponent(() => import('@/components/view/DetailsTab.vue')))

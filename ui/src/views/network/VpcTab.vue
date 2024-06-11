@@ -753,6 +753,7 @@ export default {
           ipaddress: data.ipaddress,
           gateway: data.gateway,
           netmask: data.netmask,
+          description: data.description,
           aclid: data.acl
         }
         if (data.bypassvlanoverlapcheck) {
