@@ -48,6 +48,9 @@ public class VpcGatewayVO implements VpcGateway {
     @Column(name = "netmask")
     String netmask;
 
+    @Column(name = "description")
+    String description;
+
     @Column(name = "vlan_tag")
     String broadcastUri;
 
