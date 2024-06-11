@@ -601,6 +601,10 @@ export default {
         pagesize: this.pageSize
       }).then(json => {
         this.privateGateways = json.listprivategatewaysresponse.privategateway
+        this.privateGateways = this.privateGateways.map((privateGateway) => {
+          privateGateway.description = privateGateway.privatedescription
+          return privateGateway
+        })
         console.log(JSON.stringify(this.privateGateways))
         this.itemCounts.privateGateways = json.listprivategatewaysresponse.count
       }).catch(error => {
