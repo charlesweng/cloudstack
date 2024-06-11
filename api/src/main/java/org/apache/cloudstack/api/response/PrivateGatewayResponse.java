@@ -126,6 +126,10 @@ public class PrivateGatewayResponse extends BaseResponseWithAssociatedNetwork im
         this.netmask = netmask;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public void setZoneId(String zoneId) {
         this.zoneId = zoneId;
     }
