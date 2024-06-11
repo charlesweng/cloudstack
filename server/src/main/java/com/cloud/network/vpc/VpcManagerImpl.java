@@ -2328,11 +2328,12 @@ public class VpcManagerImpl extends ManagerBase implements VpcManager, VpcProvis
             }
 
             // 2) create gateway entry
+            logger.info("Description vpc gateway " + description);
             gatewayVO = new VpcGatewayVO(ipAddress, VpcGateway.Type.Private, vpcId, privateNtwk.getDataCenterId(), privateNtwk.getId(), privateNtwk.getBroadcastUri().toString(),
                     gateway, netmask, vpc.getAccountId(), vpc.getDomainId(), isSourceNat, networkAclId, description);
             _vpcGatewayDao.persist(gatewayVO);
 
-            logger.debug("Created vpc gateway entry " + gatewayVO);
+            logger.info("Created vpc gateway entry " + gatewayVO);
         } catch (final Exception e) {
             ExceptionUtil.rethrowRuntime(e);
             ExceptionUtil.rethrow(e, InsufficientCapacityException.class);
