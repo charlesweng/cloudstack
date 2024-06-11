@@ -109,9 +109,10 @@ public class VpcGatewayVO implements VpcGateway {
      * @param domainId TODO
      * @param account_id
      * @param sourceNat
+     * @param description
      */
     public VpcGatewayVO(String ip4Address, Type type, long vpcId, long zoneId, long networkId, String broadcastUri, String gateway, String netmask, long accountId,
-            long domainId, boolean sourceNat, long networkACLId) {
+            long domainId, boolean sourceNat, long networkACLId, String description) {
         this.ip4Address = ip4Address;
         this.type = type;
         this.vpcId = vpcId;
@@ -236,5 +237,9 @@ public class VpcGatewayVO implements VpcGateway {
     @Override
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

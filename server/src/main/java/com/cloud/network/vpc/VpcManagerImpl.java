@@ -2329,7 +2329,7 @@ public class VpcManagerImpl extends ManagerBase implements VpcManager, VpcProvis
 
             // 2) create gateway entry
             gatewayVO = new VpcGatewayVO(ipAddress, VpcGateway.Type.Private, vpcId, privateNtwk.getDataCenterId(), privateNtwk.getId(), privateNtwk.getBroadcastUri().toString(),
-                    gateway, netmask, vpc.getAccountId(), vpc.getDomainId(), isSourceNat, networkAclId);
+                    gateway, netmask, vpc.getAccountId(), vpc.getDomainId(), isSourceNat, networkAclId, description);
             _vpcGatewayDao.persist(gatewayVO);
 
             logger.debug("Created vpc gateway entry " + gatewayVO);
