@@ -58,7 +58,7 @@ public class ListPrivateGatewaysCmd extends BaseListProjectAndAccountResourcesCm
     @Parameter(name = ApiConstants.STATE, type = CommandType.STRING, description = "list gateways by state")
     private String state;
 
-    @Parameter(name = ApiConstants.PRIVATE_DESCRIPTION, type = CommandType.STRING, description = "the description of the Private Gateway")
+    @Parameter(name = ApiConstants.DESCRIPTION, type = CommandType.STRING, description = "the description of the Private Gateway")
     private String description;
 
     /////////////////////////////////////////////////////

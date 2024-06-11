@@ -41,7 +41,7 @@ public class PrivateGatewayResponse extends BaseResponseWithAssociatedNetwork im
     @Param(description = "the private gateway's netmask")
     private String netmask;
 
-    @SerializedName(ApiConstants.PRIVATE_DESCRIPTION)
+    @SerializedName(ApiConstants.DESCRIPTION)
     @Param(description = "the private gateway's description")
     private String description;
 
